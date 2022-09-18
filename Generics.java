@@ -3,26 +3,21 @@ package day13_Generics;
 
 public class Generics {
 
-	static int findMaximum(int arr[], int low, int high)
-    {
-       int max = arr[low];
-       int i;
-       for (i = low; i <= high; i++)
-       {
-           if (arr[i] > max)
-              max = arr[i];
-       }
-       return max;
-    }
-     
-    public static void main (String[] args)
-    {
-        int arr[] = {30, 40, 70, 50, 60, 1, 23, 20};
-        int n = arr.length;
-        System.out.println("The maximum element at 3rd position is : "+
-                            findMaximum(arr, 0, n-1));
-        for(int element: arr)
-        System.out.print("Array " + element + " ");
-        
-    }
-}
+	public static <T extends Comparable<T>> T maximum(T x, T y, T z) {
+	    T max = x; 
+
+	    if (y.compareTo(max) > 0)
+	      max = y; 
+
+	    if (z.compareTo(max) > 0)
+	      max = z; 
+
+	    return max; 
+	  } 
+
+	  public static void main(String args[]) {
+	    System.out.printf("Maximum of %.1f, %.1f and %.1f is %.1f\n\n", 6.6, 8.8, 7.7, maximum(6.6,
+	        8.8, 7.7));
+	   
+	  }
+	}
