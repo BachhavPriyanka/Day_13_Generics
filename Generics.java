@@ -17,9 +17,9 @@ public class Generics {
      
     public static void main (String[] args)
     {
-        int arr[] = {30, 70, 40, 50, 60, 1, 23, 20};
+        int arr[] = {30, 40, 70, 50, 60, 1, 23, 20};
         int n = arr.length;
-        System.out.println("The maximum element at 1st position is : "+
+        System.out.println("The maximum element at 3rd position is : "+
                             findMaximum(arr, 0, n-1));
         for(int element: arr)
         System.out.print("Array " + element + " ");
